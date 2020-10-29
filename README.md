@@ -1,77 +1,139 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+<p align="center">
+  <h3 align="center">Lotus Notes to MongoDB Migration</h3>
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+  <p align="center">
+    This open source utility can migrate Lotus Notes Database(NSF) data to MongoDB
+    <br />
+    <a href="https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration">Scope</a>
+    ·
+    <a href="https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration/issues">Request Feature</a>
+  </p>
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
 
-The purpose of this project is to provide a template for new open source repositories.
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+With the divestiture of IBM Notes to HCL, it’s a need of this moment to move existing IBM Notes applications to some other platform. There are several options to choose from, but MEAN (MongoDB-Express-Angular-NodeJs) stack is the most appropriate choice because of following reasons,
+1.	MongoDB is the most popular NoSql database which offers several benefits like scalability, indexing, faster processing, Compass and Atlas etc.
+2.	NodeJS is JavaScript runtime which runs on Chrome V8 engine which is fast and secure. 
+3.	Angular is full featured JavaScript framework to design feature rich UI.
+In every rewrite or redesign project, the most critical part is the existing Data. Data retention, processing and migration are the steps which are critical and required for every application. IBM Notes (Lotus Notes) being a legacy tool with very small community, there are no or very less options available (as per my knowledge and R&D) to migrate data to MongoDB. There are 3rd party tools available, but that is costly and there is a risk of exposing confidential data to some 3rd party which is not secure. 
+We are redesigning our existing IBM Notes applications to MEAN stack and we faced these challenges during Data migrations. To overcome this, I have developed this solution that can easily migrate data from IBM Notes to MongoDB. This solution offers several benefits,
+1.	It’s easy to implement and it can be used with any IBM Notes database.
+2.	It’s based-on HTTP and REST, so its fast and secure.
+3.	Its written in Python which has excellent set of libraries to work with Data (Data Cleaning, Data Processing etc).
+4.	We are getting and processing data in JSON and its suitable for Python and MongoDB.
+5.	Most importantly, once you are out of IBM Notes it will give you lot of options and opportunities to scale your application using modern tools. You can implement DevOps, TDD, AI and many others (Opportunities are endless).
+
+### Built With
+
+* [Python](https://www.python.org/downloads/)
+* [Domino Access Service API](https://ds_infolib.hcltechsw.com/ldd/ddwiki.nsf/xpAPIViewer.xsp?lookupName=IBM+Domino+Access+Services+9.0.1#action=openDocument&content=catcontent&ct=api)
+* [MongoDB](https://www.mongodb.com/try/download/community)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+You need to install following Python packages
+* pip
+```sh
+pip install pymongo
+pip install csv
+pip install requests
+pip install traceback
+```
+You need to configure Domino Access Service API on your Domino server and database. Here are the instruction to setup and enable that, <br />
+[Instructions to setup and enable Domino Access Service API][documentation-file]
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration.git
+```
+2. Install Python packages
+```sh
+pip install
+```
+
+
+
+<!-- USAGE EXAMPLES -->
 ## Usage
 
-This repository contains some example best practices for open source repositories:
+please refer to the [Documentation][documentation-file]
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
 
-> These are optional
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+<!-- ROADMAP -->
+## Roadmap
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+See the [open issues](https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration/issues) for a list of proposed features (and known issues).
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+<!-- CONTRIBUTING -->
+## Contributing
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
 
+
+<!-- LICENSE -->
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
-## Authors
 
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
 
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
+<!-- CONTACT -->
+## Contact
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+Kirti Jha - kirtijha@in.ibm.com
+
+Project Link: [https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration](https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration)
+
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[documentation-file]: documentation/IBM%20Notes%20to%20MongoDB%20Migration.docx
